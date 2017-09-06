@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="mobileui/fonts.css">
+    <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="utf-8">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Bora beber</title>
+    </head>
+    <body>
+        <div class="menu red-600 cover blend-multiply" id="menuDiscover">
+          <div class="cover align-center">
+            <img class="avatar circle border-white shadow space-small " style="width:7em; height:7em;" src="/img/thiago.jpg">
+            <h1 class="text-teal-300">Thiago Barbosa</h1>
+            <p class="text-grey">thiiago_barbosa@mail.com</p>
+          </div>
+          <div class="list no-border">
+            <a class="item space-small">
+              <div class="left">
+                <i class="icon ion-android-happy grey-300"></i>
+              </div>
+              <h1 class="text-grey-300" onclick="openPage('login')">Perfil</h1>
+            </a>
+            <a class="item space-small">
+                    <div class="left">
+                      <i class="icon ion-ios-chatbubble-outline grey-300"></i>
+                    </div>
+                    <h1 class="text-grey-300" onclick="openPage('chat')">Bate-Papo</h1>
+                    <div class="right">
+                            <span class="text-small border-green text-green radius padding">4</span>
+                    </div>
+                  </a>
+            <a class="item space-small">
+              <div class="left">
+                <i class="icon ion-ios-cart-outline grey-300"></i>
+              </div>
+              <h1 class="text-grey-300" onclick="openPage('promocao')">Promoções</h1>
+            </a>
+            <a class="item space-small">
+              <div class="left">
+                <i class="icon ion-ios-location-outline grey-300"></i>
+              </div>
+              <h1 class="text-grey-300" onclick="openPage('localizacao')">Localização</h1>
+            </a>
+            
+          </div>
+        </div>
+        <div class="header red">
+          <div class="left">
+            <button class="icon ion-navicon-round" onclick="openMenu('menuDiscover')"></button>
+          </div>
+          <h1 class="title align-center">Promoções</h1>
+          
+</div>
+
+      <div class="content row-center red align-center cover blend-soft-light" style="background-image: url(img/1.jpg);">
+        <div class="col"> 
+
+          <div class="row">
+            <div class="col">
+              
+            </div>
+          </div>
+          <div class="space-huge"></div>
+
+          <div class="row">
+              <div class="col text-strong" onclick="openPage('promocao')"> 
+                  <i class="icon ion-ios-cart opacity-100"></i>
+                  <h2 class="text-strong">Promoção</h2>
+
+              </div>
+              <div class="col text-strong" onclick="openPage('localizacao')"> 
+                  <i class="icon ion-ios-location opacity-100"></i>
+                  <h2 class="text-strong">Localização</h2>
+              </div>
+              <div class="col text-strong" onclick="openPage('chat')"> 
+                  <i class="icon ion-chatbox-working opacity-100"></i>
+                <h2 class="text-strong">Bate-Papo</h2>
+              </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="mobileui/mobileui.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
