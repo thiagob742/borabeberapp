@@ -1,6 +1,10 @@
 
 var url = "http://www.mocky.io/v2/59cff2730f0000190193dc96";
 
+var urlbar = "http://www.mocky.io/v2/59ff56222e00003b0fca5969";
+
+var bares = [];
+
 var promo = [];
 
 
@@ -29,7 +33,28 @@ function sincronizar() {
       });
   
     });
-    console.log(data);
-    console.log(promo[0].nomeBar);
-
   }
+
+  function sincronizarBares() {
+      MobileUI.ajax.get(urlbar, (err, res) => {
+        if (err) {
+          return;
+        }
+    
+        var databar = JSON.parse(res.text);
+    
+        bares = [];
+    
+        databar.forEach(item => {
+          var obj = {
+            nome: item.nome,
+            endereco: item.endereco,
+            foto: item.foto,
+            latitude: item.latitude,
+            longitude: item.longitude
+          }
+    
+          bares.push(obj);
+        });
+      });
+    }
