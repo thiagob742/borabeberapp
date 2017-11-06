@@ -33,9 +33,9 @@ function sincronizar() {
       });
   
     });
-  }
+}
 
-  function sincronizarBares() {
+function sincronizarBares() {
       MobileUI.ajax.get(urlbar, (err, res) => {
         if (err) {
           return;
@@ -57,4 +57,4 @@ function sincronizar() {
           bares.push(obj);
         });
       });
-    }
+}
