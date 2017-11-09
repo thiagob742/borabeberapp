@@ -15,6 +15,12 @@
         },
         "cordova-plugin-gpslocation": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-googlemaps": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "com.googlemaps.ios": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {

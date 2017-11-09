@@ -1,26 +1,30 @@
 {
-    "name": "helloworld",
-    "displayName": "HelloCordova",
-    "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Apache Cordova Team",
-    "license": "Apache-2.0",
-    "dependencies": {
-        "cordova": "^7.1.0",
-        "cordova-plugin-geolocation": "^2.4.3",
-        "cordova-plugin-gpslocation": "^1.0.0",
-        "cordova-plugin-whitelist": "^1.3.2",
-        "mobileui": "^0.1.17"
-    },
-    "cordova": {
-        "plugins": {
-            "cordova-plugin-geolocation": {},
-            "cordova-plugin-whitelist": {},
-            "cordova-plugin-gpslocation": {}
-        }
+  "name": "helloworld",
+  "displayName": "HelloCordova",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova": "^7.1.0",
+    "cordova-android": "^6.2.3",
+    "cordova-plugin-geolocation": "^2.4.3",
+    "cordova-plugin-googlemaps": "^2.1.1",
+    "cordova-plugin-gpslocation": "^1.0.0",
+    "cordova-plugin-whitelist": "^1.3.2",
+    "mobileui": "^0.1.17"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-geolocation": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-gpslocation": {},
+      "cordova-plugin-googlemaps": {},
+      "com.googlemaps.ios": {}
     }
+  }
 }

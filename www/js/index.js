@@ -6,6 +6,8 @@ var promo = [];
 var urlbar = "http://www.mocky.io/v2/59ff56222e00003b0fca5969";
 var bares = [];
 
+var heroku = "http://borabeber-api.herokuapp.com/api/promocao";
+
 function sincronizar() {
   fetch(url)
     .then((response) => {
@@ -16,9 +18,35 @@ function sincronizar() {
           });
         })
     })
+
+  // fetch(heroku)
+  //   .then((response) => {
+  //     response.json()
+  //       .then( (elementos) =>{
+  //         elementos.forEach((elemento) => {
+  //           console.log(elemento);
+  //         });
+  //       })
+  //   })
 }
 
 function sincronizarBares() {
+  openPage('localizacao', function () {
+    //carregar os paranaie
+    var map;
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8
+    });
+    var m1 = new google.maps.Marker({
+      position: {lat: -34.397, lng: 150.644},
+      map: map,
+      title: 'Hello World!'
+    });
+    m1.addListener('click', function() {
+      alert('showww')
+    });
+  });
   fetch(urlbar)
     .then( (response) => {
       response.json()

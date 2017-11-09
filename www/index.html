@@ -44,7 +44,7 @@
         <div class="left">
           <i class="icon ion-ios-location-outline white"></i>
         </div>
-        <h1 class="text-white" onclick="openPage('localizacao')">Localização</h1>
+        <h1 class="text-white">Localização</h1>
       </a>
 
     </div>
@@ -60,7 +60,7 @@
   <div class="red has-header">
     <div class="buttons-group full small space">
       <button class="red-900 border-red icon ion-ios-cart-outline">Promoções</button>
-      <button class="red border-red ion-ios-location-outline" onclick="openPage('localizacao')">Localização</button>
+      <button class="red border-red ion-ios-location-outline" onclick="sincronizarBares('localizacao')">Localização</button>
       <button class="red border-red radius-right ion-ios-chatbubble-outline" onclick="openPage('chat')">Bate-Papo</button>
     </div>
   </div>
@@ -93,13 +93,14 @@
       </div>
       <div class="space"></div>
  
-
       <script type="text/javascript" src="cordova.js"></script>
+      <script src=
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyA0PUKqby3rg6KMFo3M3J8ObFoqHvsEXHI&libraries=places">
+      </script>
       <script type="text/javascript" src="mobileui/mobileui.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
       <script type="text/javascript" src="mobileui/jquery-3.0.1.js"></script>
       <script type="text/javascript"> $(document).ready(() => sincronizar());</script>
-      <script type="text/javascript"> $(document).ready(() => sincronizarBares());</script>
 
 </body>
 </html>
