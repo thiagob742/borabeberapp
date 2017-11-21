@@ -6,10 +6,14 @@ var promo = [];
 var urlbar = "http://www.mocky.io/v2/59ff56222e00003b0fca5969";
 var bares = [];
 
-var heroku = "http://borabeber-api.herokuapp.com/api/promocao";
+var map;
+
+var promocaoApi = "http://borabeber-api.herokuapp.com/api/promocao";
 
 function sincronizar() {
-  fetch(url)
+  loading('Buscando Promoções ...');
+  
+  fetch(promocaoApi)
     .then((response) => {
       response.json()
         .then( (elementos) =>{
@@ -17,51 +21,69 @@ function sincronizar() {
             promo.push(elemento);
           });
         })
+        closeLoading();
     })
-
-  // fetch(heroku)
-  //   .then((response) => {
-  //     response.json()
-  //       .then( (elementos) =>{
-  //         elementos.forEach((elemento) => {
-  //           console.log(elemento);
-  //         });
-  //       })
-  //   })
 }
 
-function sincronizarBares() {
+
+
+//função pro get na localização do smartphone
+
+
+function iniciarMapa() {
   openPage('localizacao', function () {
-    //carregar os paranaie
-    var map;
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    });
-    var m1 = new google.maps.Marker({
-      position: {lat: -34.397, lng: 150.644},
-      map: map,
-      title: 'Hello World!'
-    });
-    m1.addListener('click', function() {
-      alert('showww')
-    });
+  
+    
+    var onSuccess = function(position) {
+       var longitude = position.coords.longitude;
+       var latitude = position.coords.latitude;
+      console.log("longitude: " + longitude);
+      console.log("latitude: " + latitude);
+      var latLong = new google.maps.LatLng(latitude, longitude);
+      //var latLong = new google.maps.LatLng(-23.4421292, -51.9198801);
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: latLong,
+        zoom: 15
+      });
+
+      var marker = new google.maps.Marker({
+        position: latLong,
+        map: map,
+        title: 'my location'
+      });
+
+    };
+
+    function onError(error) {
+       console.log(error.message);
+    }
+    setMarker(map);
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
   });
-  fetch(urlbar)
-    .then( (response) => {
-      response.json()
-        .then( databar => {
-          databar.forEach(item => {
-            var obj = {
-              nome: item.nome,
-              endereco: item.endereco,
-              foto: item.foto,
-              latitude: item.latitude,
-              longitude: item.longitude
-            }
-            console.log(obj);
-            bares.push(obj);
-        })
-    })
-  })
 }
+
+
+function setMarker(map){
+
+  bares.forEach(item =>{
+    var marker = new google.maps.Marker({
+      position: item.latLgn,
+      icon: 'img/marker_blue.png',
+      title: item.titulo,
+      map: map
+    });
+
+    // marker.addListener('click', function() {
+    //   openPage('cardapio', function(item){
+        
+    //   });
+      
+    // });
+  }); 
+}
+document.write('<script src=js/dataPoints.js');
+
+
+

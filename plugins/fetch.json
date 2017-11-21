@@ -34,10 +34,12 @@
     "cordova-plugin-googlemaps": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-googlemaps"
+            "id": "cordova-plugin-googlemaps@^2.1.1"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "API_KEY_FOR_ANDROID": "AIzaSyA0PUKqby3rg6KMFo3M3J8ObFoqHvsEXHI"
+        }
     },
     "com.googlemaps.ios": {
         "source": {

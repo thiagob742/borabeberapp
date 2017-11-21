@@ -4,4 +4,9 @@
 	border-radius: 150px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
-	}
+}
+#map {
+	height: 100%;
+}
+
+	
